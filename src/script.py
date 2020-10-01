@@ -11,4 +11,5 @@ def get_tips(url=TIPS_URL):
 
 
 if __name__ == '__main__':
-    get_tips()
+    for tip in sorted(get_tips(), key=lambda tip: tip['id']):
+        print(f"{tip['id']} - {tip['title']}")
